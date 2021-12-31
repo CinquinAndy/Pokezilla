@@ -2,29 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6dbf9ca-45fb-4f6c-b29f-bfde47139b05" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Pokezilla.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/1/015e33e66c5c1dc3d4d2c1de961a0168f9e2276f" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/5/454b4c7d4cfd0f79035c4aa1900c4a6630dad731" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pokezilla/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pokezilla/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pokezilla/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pokezilla/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pokezilla/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pokezilla/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/pokedex/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/pokedex/stylesheets.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/pokedex/tailwindcss.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/theme/static_src/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/pokedex/stylesheets.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/pokedex/stylesheets.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +106,8 @@
       <workItem from="1640889132456" duration="3783000" />
       <workItem from="1640901066675" duration="4223000" />
       <workItem from="1640905822917" duration="1523000" />
-      <workItem from="1640943570355" duration="7194000" />
+      <workItem from="1640943570355" duration="8277000" />
+      <workItem from="1640971469030" duration="360000" />
     </task>
     <servers />
   </component>

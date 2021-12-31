@@ -29,3 +29,9 @@ S
 theme/apps.py,1\6\1646ba7ace91366a601e3cb7d8c001e4e7c96ef4
 R
 "theme/static_src/postcss.config.js,f\f\ff741830bc729195bd401863d7af7e0391b2620b
+N
+static/pokedex/tailwindcss.css,5\f\5f2b1dcd4b19fadf994cdcc9272a4819f66f691e
+A
+Pokezilla/urls.py,c\b\cb158c12be9fa2a22a8b9a5335d9d6d4a479ec5e
+E
+Pokezilla/settings.py,8\6\861771192d220412b8395dd33c607218dd4512b0
