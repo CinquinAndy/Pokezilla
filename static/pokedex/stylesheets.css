@@ -27,10 +27,10 @@ body {
 }
 
 .icon {
+    border: none;
     border-radius: 100%;
-    height: 100px;
-    width: 100px;
-    margin: auto;
+    height: 40px;
+    width: 40px;
     transition: 200ms all;
 }
 
@@ -138,4 +138,17 @@ body {
 
 .card-pokemon:hover img {
     transform: scale(1.1);
+}
+
+.h-98vh{
+    height: 98vh;
+}
+
+.pokemon-img{
+    width: 40rem;
+    height: 40rem;
+}
+
+.type img{
+    margin: 1rem;
 }

@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokezilla</title>
+    {#{% load tailwind_tags %}#}
+    {#    {% tailwind_css %}#}
+    <link rel="stylesheet" href="../static/pokedex/tailwindcss.css">
+    <link rel="stylesheet" href="../static/pokedex/stylesheets.css">
+    <script src="../static/pokedex/script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;1000;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+</head>
+<body class="text-gray-900 bg-gray-50">
+<section class="grid grid-cols-2 gap-4 p-10 w-screen h-98vh">
+    <article class="text-gray-900 flex justify-between flex-col items-start">
+        <h1 class="text-2xl">
+            DRACAUFEU : # 00{{ number }}
+        </h1>
+        <p>
+            It spits fire that is hot enough to melt boulders. It may cause forest fires by blowing flames.
+        </p>
+        <div class="w-full flex justify-evenly items-center p-4">
+            <div class="grid grid-cols-2 gap-20">
+                <div class="grid grid-cols-2 grid-rows-3 gap-14">
+                    <div>
+                        <h2 class="font-bold text-xl">Heigt</h2>
+                        <h3>5'07"</h3>
+                    </div>
+                    <div>
+                        <h2 class="font-bold text-xl">Category</h2>
+                        <h3>Flame</h3>
+                    </div>
+                    <div>
+                        <h2 class="font-bold text-xl">Capture Rate</h2>
+                        <h3>45 %</h3>
+                    </div>
+                    <div>
+                        <h2 class="font-bold text-xl">Weight</h2>
+                        <h3>199.5 lbs</h3>
+                    </div>
+                    <div>
+                        <h2 class="font-bold text-xl">Abilities</h2>
+                        <h3>Blaze</h3>
+                    </div>
+                </div>
+                <div class="grid grid-rows-2">
+                    <div class="flex flex-col">
+                        <h2 class="font-bold text-xl">Type</h2>
+                        <div class="flex type">
+                            <img src="../static/pokedex/Ressources/images/types/dark.svg" alt="dark" class="icon dark">
+                            <img src="../static/pokedex/Ressources/images/types/dark.svg" alt="dark" class="icon dark">
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <h2 class="font-bold text-xl">Weakness</h2>
+                        <div class="flex type">
+                            <img src="../static/pokedex/Ressources/images/types/dark.svg" alt="dark" class="icon dark">
+                            <img src="../static/pokedex/Ressources/images/types/dark.svg" alt="dark" class="icon dark">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <canvas id="myChart" width="400" height="180"></canvas>
+    </article>
+    <article class="w-full h-full flex justify-center items-center">
+        <img src="../static/pokedex/Ressources/images/6.png" alt="Dracaufeu" class="pokemon-img">
+    </article>
+</section>
+</body>
+
+<script>
+    const ctx = document.getElementById('myChart');
+
+    var bar_ctx = ctx.getContext('2d');
+    var background_hp = bar_ctx.createLinearGradient(0, 0, 0, 1000);
+    background_hp.addColorStop(0, '#14532d');
+    background_hp.addColorStop(1, '#dcfce7');
+
+    var background_atk = bar_ctx.createLinearGradient(0, 0, 0, 1000);
+    background_atk.addColorStop(0, '#7f1d1d');
+    background_atk.addColorStop(1, '#fee2e2');
+
+    var background_def = bar_ctx.createLinearGradient(0, 0, 0, 1000);
+    background_def.addColorStop(0, '#713F12');
+    background_def.addColorStop(1, '#fef9c3');
+
+    var background_atkspe = bar_ctx.createLinearGradient(0, 0, 0, 1000);
+    background_atkspe.addColorStop(0, '#0c4a6e');
+    background_atkspe.addColorStop(1, '#e0f2fe');
+
+    var background_defspe = bar_ctx.createLinearGradient(0, 0, 0, 1000);
+    background_defspe.addColorStop(0, '#134e4a');
+    background_defspe.addColorStop(1, '#ccfbf1');
+
+    var background_speed = bar_ctx.createLinearGradient(0, 0, 0, 1000);
+    background_speed.addColorStop(0, '#78350f');
+    background_speed.addColorStop(1, '#fef3c7');
+
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['HP', 'ATK', 'DEF', 'ATK.SPE', 'DEF.SPE', 'SPEED'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 50, 3],
+                backgroundColor: [
+                    background_hp,
+                    background_atk,
+                    background_def,
+                    background_atkspe,
+                    background_defspe,
+                    background_speed
+                ],
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+</html>
