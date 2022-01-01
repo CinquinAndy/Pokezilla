@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;1000;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
 </head>
-<body class="text-gray-900 bg-gray-50">
+<body class="text-gray-800 bg-gray-50">
 <section class="grid grid-cols-2 gap-4 p-10 w-screen h-98vh">
     <article class="text-gray-900 flex justify-between flex-col items-start">
         <h1 class="text-2xl">
@@ -52,23 +52,35 @@
                         <h2 class="font-bold text-xl">Type</h2>
                         <div class="flex type">
                             <img src="../static/pokedex/Ressources/images/types/dark.svg" alt="dark" class="icon dark">
-                            <img src="../static/pokedex/Ressources/images/types/dark.svg" alt="dark" class="icon dark">
+                            <img src="../static/pokedex/Ressources/images/types/fire.svg" alt="dark" class="icon fire">
                         </div>
                     </div>
                     <div class="flex flex-col">
                         <h2 class="font-bold text-xl">Weakness</h2>
                         <div class="flex type">
-                            <img src="../static/pokedex/Ressources/images/types/dark.svg" alt="dark" class="icon dark">
-                            <img src="../static/pokedex/Ressources/images/types/dark.svg" alt="dark" class="icon dark">
+                            <img src="../static/pokedex/Ressources/images/types/electric.svg" alt="electric"
+                                 class="icon electric">
+                            <img src="../static/pokedex/Ressources/images/types/bug.svg" alt="bug" class="icon bug">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
         <canvas id="myChart" width="400" height="180"></canvas>
     </article>
-    <article class="w-full h-full flex justify-center items-center">
+    <article class="w-full h-full flex justify-center items-center relative">
+        <div class="absolute top-0 right-0">
+            <img src="../static/pokedex/Ressources/images/mew.svg" alt="fabuleux" class="w-20 h-20">
+        </div>
+        <a class="absolute bottom-0 right-0 pr-20 flex items-center navigation-next" href="#">
+            <h3>Pokemon suivant</h3>
+            <img src="../static/pokedex/Ressources/images/arrow.svg" alt="next" class="w-10 h-10 ml-6">
+        </a>
+        <a class="absolute bottom-0 left-0 pl-20 flex items-center navigation-back" href="#">
+            <img src="../static/pokedex/Ressources/images/arrow.svg" alt="back"
+                 class="w-10 h-10 transform rotate-180 mr-6">
+            <h3>Pokemon précédent</h3>
+        </a>
         <img src="../static/pokedex/Ressources/images/6.png" alt="Dracaufeu" class="pokemon-img">
     </article>
 </section>

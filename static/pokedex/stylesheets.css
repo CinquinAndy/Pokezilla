@@ -32,6 +32,7 @@ body {
     height: 40px;
     width: 40px;
     transition: 200ms all;
+    padding: 5px;
 }
 
 .icon:hover {
@@ -41,9 +42,8 @@ body {
 }
 
 .icon img {
-    height: 60%;
-    width: 60%;
-    margin: 20%;
+    height: 40%;
+    width: 40%;
 }
 
 .bug {
@@ -140,15 +140,35 @@ body {
     transform: scale(1.1);
 }
 
-.h-98vh{
+.h-98vh {
     height: 98vh;
 }
 
-.pokemon-img{
+.pokemon-img {
     width: 40rem;
     height: 40rem;
 }
 
-.type img{
+.type img {
     margin: 1rem;
+}
+
+.navigation-next:hover h3 {
+    transform: translateX(10px);
+}
+
+.navigation-next:hover * {
+    --tw-text-opacity: 1;
+    color: rgba(55, 65, 81, var(--tw-text-opacity));
+    filter: brightness(80%) saturate(110%);
+}
+
+.navigation-back:hover h3 {
+    transform: translateX(-10px);
+}
+
+.navigation-back:hover * {
+    --tw-text-opacity: 1;
+    color: rgba(55, 65, 81, var(--tw-text-opacity));
+    filter: brightness(80%) saturate(110%);
 }
