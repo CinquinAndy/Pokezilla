@@ -1,3 +1,3 @@
 window.onload = function () {
-  window.scrollTo(0, 300);
+    window.scrollTo(0, 300);
 }

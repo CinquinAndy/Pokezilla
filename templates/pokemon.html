@@ -107,8 +107,8 @@
         data: {
             labels: ['HP', 'ATK', 'DEF', 'ATK.SPE', 'DEF.SPE', 'SPEED'],
             datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 50, 3],
+                label: '# stats',
+                data: [78, 104, 78, 159, 115, 100],
                 backgroundColor: [
                     background_hp,
                     background_atk,
@@ -122,6 +122,10 @@
         options: {
             scales: {
                 y: {
+                    _suggestedMin: -10,
+                    _suggestedMax: 100,
+                    min: 0,
+                    max: 255,
                     beginAtZero: true
                 }
             }
