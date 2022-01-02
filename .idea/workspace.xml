@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6dbf9ca-45fb-4f6c-b29f-bfde47139b05" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/f/5f2b1dcd4b19fadf994cdcc9272a4819f66f691e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/pokedex/stylesheets.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/pokedex/stylesheets.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pokemon.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pokemon.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,7 +106,7 @@
       <workItem from="1640905822917" duration="1523000" />
       <workItem from="1640943570355" duration="8277000" />
       <workItem from="1640971469030" duration="360000" />
-      <workItem from="1641029697678" duration="15059000" />
+      <workItem from="1641029697678" duration="16438000" />
     </task>
     <servers />
   </component>
