@@ -14,19 +14,25 @@ window.onload = function () {
 
 function search(input) {
     console.log("text : " + input)
+    const title = document.querySelector("#title")
+
+    if (input !== "") {
+        title.classList.add('hidden');
+    } else {
+        title.classList.remove('hidden');
+
+    }
+
 
     var i;
     for (i = 0; i < cards.length; i++) {
 
-        if (cards[i].innerHTML.includes(input)) {
-            console.log(cards[i]);
+        cards[i].classList.remove('hidden');
 
 
-        }
-        else {
+        if (!cards[i].innerHTML.includes(input)) {
             cards[i].classList.add('hidden');
         }
-
 
 
     }
