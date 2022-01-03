@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Pokezilla</title>
-    {% load tailwind_tags %}
-    {% tailwind_css %}
-{#    <link rel="stylesheet" href="../static/pokedex/tailwindcss.css">#}
+    {#    {% load tailwind_tags %}#}
+    {#    {% tailwind_css %}#}
+    <link rel="stylesheet" href="../static/pokedex/tailwindcss.css">
     <link rel="stylesheet" href="../static/pokedex/stylesheets.css">
     <script src="../static/pokedex/script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,41 +18,135 @@
 <section class="grid grid-cols-2 gap-4 p-10 w-screen h-98vh relative">
     <article class="text-gray-900 flex justify-between flex-col items-start">
         <h1 class="text-2xl">
-            DRACAUFEU : # 00{{ number }}
+            {{ pokemon.name_fr.name }} : # 00{{ number }}
         </h1>
         <p>
-            It spits fire that is hot enough to melt boulders. It may cause forest fires by blowing flames.
+
+            {{ pokemon.flavor_text.flavor_text }}
         </p>
         <div class="w-full flex justify-evenly items-center p-4">
             <div class="grid grid-cols-2 gap-20">
                 <div class="grid grid-cols-2 grid-rows-3 gap-14">
                     <div>
-                        <h2 class="font-bold text-xl">Heigt</h2>
-                        <h3>5'07"</h3>
+                        <h2 class="font-bold text-xl">Height</h2>
+                        <h3>TO DO</h3>
                     </div>
                     <div>
                         <h2 class="font-bold text-xl">Category</h2>
-                        <h3>Flame</h3>
+                        <h3>{{ pokemon.genera.genus }}</h3>
                     </div>
                     <div>
                         <h2 class="font-bold text-xl">Capture Rate</h2>
-                        <h3>45 %</h3>
+                        <h3>  {{ pokemon.capture_rate }} </h3>
                     </div>
                     <div>
                         <h2 class="font-bold text-xl">Weight</h2>
-                        <h3>199.5 lbs</h3>
+                        <h3>{{ pokemon.weight }} lbs</h3>
                     </div>
                     <div>
                         <h2 class="font-bold text-xl">Abilities</h2>
-                        <h3>Blaze</h3>
+                        <h3>TO DO</h3>
                     </div>
                 </div>
                 <div class="grid grid-rows-2">
                     <div class="flex flex-col">
                         <h2 class="font-bold text-xl">Type</h2>
                         <div class="flex type">
-                            <img src="../static/pokedex/Ressources/images/types/dark.svg" alt="dark" class="icon dark">
-                            <img src="../static/pokedex/Ressources/images/types/fire.svg" alt="dark" class="icon fire">
+
+                            {% for type in pokemon.types %}
+
+                                {% if type.type.name == 'fairy' %}
+                                    <img src="../static/pokedex/Ressources/images/types/fairy.svg" alt="fairy"
+                                         class="icon fairy">
+                                {% endif %}
+
+                                {% if type.type.name == 'fire' %}
+                                    <img src="../static/pokedex/Ressources/images/types/fire.svg" alt="dark"
+                                         class="icon fire">
+                                {% endif %}
+
+                                {% if type.type.name == 'normal' %}
+                                    <img src="../static/pokedex/Ressources/images/types/normal.svg" alt="normal"
+                                         class="icon normal">
+                                {% endif %}
+
+                                {% if type.type.name == 'bug' %}
+                                    <img src="../static/pokedex/Ressources/images/types/bug.svg" alt="bug"
+                                         class="icon bug">
+                                {% endif %}
+
+                                {% if type.type.name == 'dark' %}
+                                    <img src="../static/pokedex/Ressources/images/types/dark.svg" alt="dark"
+                                         class="icon dark">
+                                {% endif %}
+
+                                {% if type.type.name == 'dragon' %}
+                                    <img src="../static/pokedex/Ressources/images/types/dragon.svg" alt="dragon"
+                                         class="icon dragon">
+                                {% endif %}
+
+                                {% if type.type.name == 'electric' %}
+                                    <img src="../static/pokedex/Ressources/images/types/electric.svg" alt="electric"
+                                         class="icon electric">
+                                {% endif %}
+
+                                {% if type.type.name == 'fighting' %}
+                                    <img src="../static/pokedex/Ressources/images/types/fighting.svg" alt="fighting"
+                                         class="icon fighting">
+                                {% endif %}
+
+                                {% if type.type.name == 'flying' %}
+                                    <img src="../static/pokedex/Ressources/images/types/flying.svg" alt="flying"
+                                         class="icon flying">
+                                {% endif %}
+                                {% if type.type.name == 'ghost' %}
+                                    <img src="../static/pokedex/Ressources/images/types/ghost.svg" alt="ghost"
+                                         class="icon ghost">
+                                {% endif %}
+
+                                {% if type.type.name == 'grass' %}
+                                    <img src="../static/pokedex/Ressources/images/types/grass.svg" alt="grass"
+                                         class="icon grass">
+                                {% endif %}
+
+                                {% if type.type.name == 'ground' %}
+                                    <img src="../static/pokedex/Ressources/images/types/ground.svg" alt="ground"
+                                         class="icon ground">
+                                {% endif %}
+
+                                {% if type.type.name == 'ice' %}
+                                    <img src="../static/pokedex/Ressources/images/types/ice.svg" alt="ice"
+                                         class="icon ice">
+                                {% endif %}
+
+                                {% if type.type.name == 'poison' %}
+                                    <img src="../static/pokedex/Ressources/images/types/poison.svg" alt="poison"
+                                         class="icon poison">
+                                {% endif %}
+
+                                {% if type.type.name == 'psychic' %}
+                                    <img src="../static/pokedex/Ressources/images/types/psychic.svg" alt="psychic"
+                                         class="icon psychic">
+                                {% endif %}
+
+                                {% if type.type.name == 'rock' %}
+                                    <img src="../static/pokedex/Ressources/images/types/rock.svg" alt="rock"
+                                         class="icon rock">
+                                {% endif %}
+
+                                {% if type.type.name == 'steel' %}
+                                    <img src="../static/pokedex/Ressources/images/types/steel.svg" alt="steel"
+                                         class="icon steel">
+                                {% endif %}
+
+
+                                {% if type.type.name == 'water' %}
+                                    <img src="../static/pokedex/Ressources/images/types/water.svg" alt="water"
+                                         class="icon water">
+                                {% endif %}
+
+                            {% endfor %}
+
                         </div>
                     </div>
                     <div class="flex flex-col">
@@ -73,18 +167,22 @@
             <img src="../static/pokedex/Ressources/images/home.svg" alt="home" class="w-12 h-12">
         </a>
         <div class="absolute top-0 left-0">
-            <img src="../static/pokedex/Ressources/images/mew.svg" alt="fabuleux" class="w-14 h-14 opacity-30  transform -rotate-45">
+            <img src="../static/pokedex/Ressources/images/mew.svg" alt="fabuleux"
+                 class="w-14 h-14 opacity-30  transform -rotate-45">
         </div>
-        <a class="absolute bottom-0 right-0 pr-20 flex items-center navigation-next" href="#">
+
+        <a class="absolute bottom-0 right-0 pr-20 flex items-center navigation-next" href="/{{ number|add:"1" }}">
             <h3>Pokemon suivant</h3>
             <img src="../static/pokedex/Ressources/images/arrow.svg" alt="next" class="w-10 h-10 ml-6">
         </a>
-        <a class="absolute bottom-0 left-0 pl-20 flex items-center navigation-back" href="#">
+
+        <a class="absolute bottom-0 left-0 pl-20 flex items-center navigation-back" href="/{{ number|add:"-1" }}">
             <img src="../static/pokedex/Ressources/images/arrow.svg" alt="back"
                  class="w-10 h-10 transform rotate-180 mr-6">
             <h3>Pokemon précédent</h3>
         </a>
-        <img src="../static/pokedex/Ressources/images/6.png" alt="Dracaufeu" class="pokemon-img">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{ number }}.png"
+             alt="{{ pokemon.name_fr.name }}" class="pokemon-img">
     </article>
 </section>
 </body>
@@ -122,8 +220,13 @@
         data: {
             labels: ['HP', 'ATK', 'DEF', 'ATK.SPE', 'DEF.SPE', 'SPEED'],
             datasets: [{
-                label: '# stats',
-                data: [78, 104, 78, 159, 115, 100],
+                label: 'STATISTICS',
+                data: [{{ pokemon.stats.0.base_stat }},
+                    {{ pokemon.stats.1.base_stat }},
+                    {{ pokemon.stats.2.base_stat }},
+                    {{ pokemon.stats.3.base_stat }},
+                    {{ pokemon.stats.4.base_stat }},
+                    {{ pokemon.stats.5.base_stat }}],
                 backgroundColor: [
                     background_hp,
                     background_atk,
@@ -140,7 +243,7 @@
                     _suggestedMin: -10,
                     _suggestedMax: 100,
                     min: 0,
-                    max: 255,
+                    max: 150,
                     beginAtZero: true
                 }
             }

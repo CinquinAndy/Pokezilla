@@ -26,6 +26,14 @@ body {
     overflow-x: hidden
 }
 
+.title {
+    font-family: 'Pokemon-Solid', serif;
+}
+
+.hidden {
+    display: none;
+}
+
 .icon {
     border: none;
     border-radius: 100%;
