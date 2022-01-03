@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Pokezilla</title>
-{#    {% load tailwind_tags %}#}
-{#    {% tailwind_css %}#}
-        <link rel="stylesheet" href="../static/pokedex/tailwindcss.css">
+    {#    {% load tailwind_tags %}#}
+    {#    {% tailwind_css %}#}
+    <link rel="stylesheet" href="../static/pokedex/tailwindcss.css">
     <link rel="stylesheet" href="../static/pokedex/stylesheets.css">
     <script src="../static/pokedex/script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,11 +14,68 @@
     <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="text-gray-900 bg-gray-50">
-<nav class="flex fixed top-36 left-1/2 z-50 justify-start items-center w-80 h-16 bg-gray-50 rounded-3xl border-2 border-gray-900 shadow-2xl transform -translate-x-1/2">
+<nav class="flex fixed top-36 left-1/2 z-45 justify-start items-center w-80 h-16 bg-gray-50 rounded-3xl border-2 border-gray-900 shadow-2xl transform -translate-x-1/2">
     <img src="../static/pokedex/Ressources/honorball.svg" alt="Honor" class="mx-4 w-8 h-8">
-    <input type="text" placeholder="Chercher un pokemon..." class="pl-4 bg-transparent focus:outline-none" oninput="search(this.value)">
+    <input type="text" placeholder="Chercher un pokemon..." class="pl-4 bg-transparent focus:outline-none"
+           oninput="search(this.value)">
 </nav>
-<section class="grid grid-cols-4 gap-8 p-10 w-screen h-full content-pokedex">
+
+
+{#     section relative a la modale        #}
+<section class="z-50">
+
+    <button onclick="showModal()" class="flex fixed top-0 right-0 m-0 p-0  justify-start items-center w-80 h-80 ">
+        <img src="../static/pokedex/Ressources/images/pokeball.svg" alt="Team" class="w-16 h-16">
+    </button>
+
+    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity modal hidden"></div>
+
+    <!-- This element is to trick the browser into centering the modal contents. -->
+    <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
+
+
+    <div class="flex fixed top-36 left-1/2  h-3/4 transform -translate-x-1/2 modal hidden">
+        <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+            <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                <div class="sm:flex sm:items-start">
+                    <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+                        <!-- Heroicon name: outline/exclamation -->
+                        <img src="../static/pokedex/Ressources/images/pokeball.svg" alt="Team" class="w-16 h-16">
+                    </div>
+                    <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                        <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+                            Pokemon de l'equipe
+                        </h3>
+                        <div class="my-6">
+                            <p class="text-sm text-gray-500">
+                                Vous pouvez ajouter jusqu'a 5 pokemon a votre equipe.
+                            </p>
+                        </div>
+                        <div id="team">
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                <button type="button" onclick="delAllTeam()"
+                        class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">
+                    Vider l'equipe
+                </button>
+                <button type="button" onclick="hideModal()"
+                        class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                    retour
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="grid grid-cols-4 gap-8 p-10 my-16 w-screen h-full content-pokedex">
     {% for value in values %}
         {% if forloop.counter0 == 5 %}
             <div class="col-span-2 rounded-2xl" id="title">
@@ -28,13 +85,19 @@
                 </div>
             </div>
         {% endif %}
-        <a class="bg-gray-50 rounded-2xl shadow-2xl card hover:shadow-xl" href="{{ value.id }}">
-            <div class="flex flex-col justify-center items-center p-10 card-pokemon">
+        <div class="bg-gray-50 rounded-2xl shadow-2xl card hover:shadow-xl">
+            <a class="flex flex-col justify-center items-center p-10 card-pokemon" href="{{ value.id }}">
                 <h2 class="text-3xl font-bold text-center">{{ value.name }}</h2>
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{ value.id }}.png" alt="{{ value.name }}">
-                <h2 class="font-bold text-center">#00{{ value.id }}</h2>
-            </div>
-        </a>
+                {#                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{ value.id }}.png"#}
+                alt="{{ value.name }}">
+
+                <h2 class="font-bold text-center ">#{{ value.id }}</h2>
+            </a>
+            <button class='mx-4 team-add   top-0 right-0'
+                    onclick='addTeam("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{ value.id }}.png","{{ value.name }}","{{ value.id }}" )'>
+                ajouter a l'equipe
+            </button>
+        </div>
     {% endfor %}
 </section>
 </body>
