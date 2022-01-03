@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Pokezilla</title>
-    {% load tailwind_tags %}
-    {% tailwind_css %}
-{#    <link rel="stylesheet" href="../static/pokedex/tailwindcss.css">#}
+    {#    {% load tailwind_tags %}#}
+    {#    {% tailwind_css %}#}
+    <link rel="stylesheet" href="../static/pokedex/tailwindcss.css">
     <link rel="stylesheet" href="../static/pokedex/stylesheets.css">
     <script src="../static/pokedex/script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -73,13 +73,16 @@
             <img src="../static/pokedex/Ressources/images/home.svg" alt="home" class="w-12 h-12">
         </a>
         <div class="absolute top-0 left-0">
-            <img src="../static/pokedex/Ressources/images/mew.svg" alt="fabuleux" class="w-14 h-14 opacity-30  transform -rotate-45">
+            <img src="../static/pokedex/Ressources/images/mew.svg" alt="fabuleux"
+                 class="w-14 h-14 opacity-30  transform -rotate-45">
         </div>
-        <a class="absolute bottom-0 right-0 pr-20 flex items-center navigation-next" href="#">
+
+        <a class="absolute bottom-0 right-0 pr-20 flex items-center navigation-next" href="/{{ number|add:"1" }}">
             <h3>Pokemon suivant</h3>
             <img src="../static/pokedex/Ressources/images/arrow.svg" alt="next" class="w-10 h-10 ml-6">
         </a>
-        <a class="absolute bottom-0 left-0 pl-20 flex items-center navigation-back" href="#">
+
+        <a class="absolute bottom-0 left-0 pl-20 flex items-center navigation-back" href="/{{ number|add:"-1" }}">
             <img src="../static/pokedex/Ressources/images/arrow.svg" alt="back"
                  class="w-10 h-10 transform rotate-180 mr-6">
             <h3>Pokemon précédent</h3>
