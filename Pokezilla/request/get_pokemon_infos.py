@@ -37,6 +37,7 @@ async def get_pokemon(id_pokemon):
                         "name_fr": c,
                         "stats": new['stats'],
                         "types": new['types'],
+                        "height": new['height'],
                         "weight": new['weight'],
                         "capture_rate": result2['capture_rate'],
                         "flavor_text": a,
