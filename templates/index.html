@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="text-gray-900 bg-gray-50">
-<nav class="flex fixed top-36 left-1/2 z-45 justify-start items-center w-80 h-16 bg-gray-50 rounded-3xl border-2 border-gray-900 shadow-2xl transform -translate-x-1/2">
+<nav class="flex fixed top-36 left-1/2 z-50 justify-start items-center w-80 h-16 bg-gray-50 rounded-3xl border-2 border-gray-900 shadow-2xl transform -translate-x-1/2">
     <img src="../static/pokedex/Ressources/honorball.svg" alt="Honor" class="mx-4 w-8 h-8">
     <input type="text" placeholder="Chercher un pokemon..." class="pl-4 bg-transparent focus:outline-none"
            oninput="search(this.value)">
@@ -22,7 +22,7 @@
 
 
 {#     section relative a la modale        #}
-<section class="z-50">
+<section class="z-55">
 
     <button onclick="showModal()" class="flex fixed top-0 right-0 m-0 p-0  justify-start items-center w-80 h-80 ">
         <img src="../static/pokedex/Ressources/images/pokeball.svg" alt="Team" class="w-16 h-16">
@@ -88,8 +88,8 @@
         <div class="bg-gray-50 rounded-2xl shadow-2xl card hover:shadow-xl">
             <a class="flex flex-col justify-center items-center p-10 card-pokemon" href="{{ value.id }}">
                 <h2 class="text-3xl font-bold text-center">{{ value.name }}</h2>
-                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{ value.id }}.png"
-                alt="{{ value.name }}">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{ value.id }}.png"
+                     alt="{{ value.name }}">
 
                 <h2 class="font-bold text-center ">#{{ value.id }}</h2>
             </a>
