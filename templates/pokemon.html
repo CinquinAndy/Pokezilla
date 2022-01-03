@@ -23,13 +23,14 @@
         <p>
 
             {{ pokemon.flavor_text.flavor_text }}
+{#            {{ pokemon }}#}
         </p>
         <div class="w-full flex justify-evenly items-center p-4">
             <div class="grid grid-cols-2 gap-20">
                 <div class="grid grid-cols-2 grid-rows-3 gap-14">
                     <div>
                         <h2 class="font-bold text-xl">Height</h2>
-                        <h3>TO DO</h3>
+                        <h3>{{ pokemon.height }} inch</h3>
                     </div>
                     <div>
                         <h2 class="font-bold text-xl">Category</h2>
@@ -164,7 +165,7 @@
     </article>
     <article class="w-full h-full flex justify-center items-center relative">
         <a class="absolute top-0 right-0" href="/">
-            <img src="../static/pokedex/Ressources/images/home.svg" alt="home" class="w-12 h-12">
+            <img src="../static/pokedex/Ressources/images/home.svg" alt="home" class="w-12 h-12 transform rotate-45">
         </a>
         <div class="absolute top-0 left-0">
             <img src="../static/pokedex/Ressources/images/mew.svg" alt="fabuleux"
