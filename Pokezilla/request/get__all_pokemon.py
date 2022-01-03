@@ -23,4 +23,4 @@ async def get_all_pokemon():
 
 
 asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
-asyncio.run(get_all_pokemon())
+# asyncio.run(get_all_pokemon())
