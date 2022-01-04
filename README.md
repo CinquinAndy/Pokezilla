@@ -6,14 +6,17 @@
 3. Puis il faut activer le venv  
 `.\venv\Scripts\activate`
 4. Puis installer les requirements du projet  
-`pip install -r .\requirement.txt`
-5. `cd .\theme\static_src\`
-6. `npm install`
-7. `cd ../..`
-8. `python manage.py tailwind start`
-9. Ajouter l'interpréteur du venv dans l'IDE (setting, barre de recherche :
+
+`pip install -r .\requirement.txt`  
+`cd .\theme\static_src\`  
+`npm install`  
+`cd ../..`  
+`python manage.py tailwind start`  
+
+
+6. Ajouter l'interpréteur du venv dans l'IDE (setting, barre de recherche :
 interpreter ) 
-10. Puis ajouter l'interpreteur du venv 
+7. Puis ajouter l'interpreteur du venv 
 
 ![img.png](img.png)
 11. Lancer le projet ( maj + f9 par défaut ou le logo de start en haut de l'IDE)
