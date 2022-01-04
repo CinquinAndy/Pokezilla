@@ -4,21 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Pokezilla</title>
-{#    {% load tailwind_tags %}#}
-{#    {% tailwind_css %}#}
-        <link rel="stylesheet" href="../static/pokedex/tailwindcss.css">
+    {% load tailwind_tags %}
+    {% tailwind_css %}
     <link rel="stylesheet" href="../static/pokedex/stylesheets.css">
     <script src="../static/pokedex/script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;1000;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
 </head>
 <body class="text-gray-800 bg-gray-50">
 <section class="grid grid-cols-2 gap-4 p-10 w-screen h-98vh relative">
     <article class="text-gray-900 flex justify-between flex-col items-start">
         <h1 class="text-2xl">
-            {{ pokemon.name_fr.name }} : # 00{{ number }}
+            {{ pokemon.name_fr.name }} : # {{ number }}
         </h1>
         <p>
             {{ pokemon.flavor_text.flavor_text }}
@@ -27,25 +26,25 @@
             <div class="grid grid-cols-2 gap-20">
                 <div class="grid grid-cols-2 grid-rows-3 gap-14">
                     <div>
-                        <h2 class="font-bold text-xl">Height</h2>
+                        <h2 class="font-bold text-md">Taille</h2>
                         <h3>{{ pokemon.height }}0 cm</h3>
                     </div>
                     <div>
-                        <h2 class="font-bold text-xl">Category</h2>
+                        <h2 class="font-bold text-md">Catégorie</h2>
                         <h3>{{ pokemon.genera.genus }}</h3>
                     </div>
                     <div>
-                        <h2 class="font-bold text-xl">Capture Rate</h2>
+                        <h2 class="font-bold text-md">Chance de capture</h2>
                         <h3>  {{ pokemon.capture_rate }} </h3>
                     </div>
                     <div>
-                        <h2 class="font-bold text-xl">Weight</h2>
+                        <h2 class="font-bold text-md">Poid</h2>
                         <h3>{{ pokemon.weight }}00 g</h3>
                     </div>
                 </div>
                 <div class="grid grid-rows-2">
                     <div class="flex flex-col">
-                        <h2 class="font-bold text-xl">Type</h2>
+                        <h2 class="font-bold text-md">Type</h2>
                         <div class="flex type">
                             {% for type in pokemon.types %}
                                 {% if type.type.name == 'fairy' %}
@@ -125,7 +124,7 @@
                         </div>
                     </div>
                     <div class="flex flex-col">
-                        <h2 class="font-bold text-xl">Weakness</h2>
+                        <h2 class="font-bold text-md">Faiblesse</h2>
                         <div class="flex type">
                             <img src="../static/pokedex/Ressources/images/types/electric.svg" alt="electric"
                                  class="icon electric">

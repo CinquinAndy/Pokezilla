@@ -34,6 +34,7 @@ module.exports = {
         // '!../../**/node_modules',
         /* JS 2: Process all JavaScript files in the project. */
         // '../../**/*.js',
+        '../../**/static/**/*.js',
 
         /**
          * Python: If you use Tailwind CSS classes in Python, uncomment the following line
@@ -44,6 +45,10 @@ module.exports = {
     theme: {
         extend: {},
     },
+    safelist:[
+        'opacity-0',
+        'z-0'
+    ],
     plugins: [
         /**
          * '@tailwindcss/forms' is the forms plugin that provides a minimal styling
