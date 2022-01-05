@@ -20,5 +20,6 @@ from Pokezilla import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="index"),
-    path('<int:number>', views.pokemon, name="pokemon")
+    path('<int:number>', views.pokemon, name="pokemon"),
+    path('my-ajax-test/', views.testcall),
 ]
