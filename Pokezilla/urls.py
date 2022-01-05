@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Pokezilla import views
+from Pokezilla.function.moyenne_equipe import average
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="index"),
     path('<int:number>', views.pokemon, name="pokemon"),
-    path('my-ajax-test/', views.testcall),
+    path('average-stats/', average),
 ]

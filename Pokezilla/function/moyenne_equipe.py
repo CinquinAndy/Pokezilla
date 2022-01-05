@@ -1,7 +1,12 @@
+import json
+
+from django.http import HttpResponse
+
 from Pokezilla.request.get_pokemon_infos import *
 
 
-async def average(pokemons):
+async def average(request):
+    pokemons = request.POST.getlist('pokemons[]')
     calculs = []
     for pokemon in pokemons:
         data = await get_pokemon(pokemon)
@@ -42,4 +47,8 @@ async def average(pokemons):
         "averageDefenseSpe": averageDefenseSpe,
         "averageSpeed": averageSpeed
     }
-    return result
+
+    print(result)
+    print(HttpResponse(result))
+
+    return HttpResponse(json.dumps(result))

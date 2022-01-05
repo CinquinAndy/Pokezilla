@@ -2,6 +2,16 @@ var cards
 var team
 var myChart
 
+
+function toTitleCase(str) {
+    return str.replace(
+        /\w\S*/g,
+        function (txt) {
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        }
+    );
+}
+
 function chartsjsfunctionnalities() {
     const ctx = document.getElementById('myChart');
 
@@ -38,12 +48,12 @@ function chartsjsfunctionnalities() {
                 label: 'STATS MOYENNE',
                 data:
                     [
-                        10,
-                        10,
-                        10,
-                        10,
-                        10,
-                        10,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
                     ],
                 backgroundColor: [
                     background_hp,
@@ -75,20 +85,45 @@ function chartsjsfunctionnalities() {
         myChart.width = 600;
         myChart.height = 300;
 
-        let pokemonsid = [];
-        for (const argumentsKey of team) {
-            pokemonsid.push(argumentsKey.id);
-        }
+        setstats();
 
-        checkStatsPokemon(
-            pokemonsid
-        );
     });
 }
 
-function updatechartpokemonstats(dataToDisplayCharts=[1,1,1,1,1,1]){
-        myChart.data.datasets[0].data = dataToDisplayCharts;
-        myChart.update();
+function setstats() {
+    let pokemonsid = [];
+    for (const argumentsKey of team) {
+        pokemonsid.push(argumentsKey.id);
+    }
+
+    checkStatsPokemon(
+        pokemonsid
+    );
+}
+
+function updatechartpokemonstats(dataToDisplayCharts) {
+    dataToDisplayCharts = JSON.parse(dataToDisplayCharts);
+    console.log(typeof (dataToDisplayCharts));
+    console.log(dataToDisplayCharts);
+    console.log([
+        dataToDisplayCharts.averageHp,
+        dataToDisplayCharts.averageAttack,
+        dataToDisplayCharts.averageDefense,
+        dataToDisplayCharts.averageAttackSpe,
+        dataToDisplayCharts.averageDefenseSpe,
+        dataToDisplayCharts.averageSpeed,
+    ]);
+    console.log(myChart)
+    myChart.data.datasets[0].data = [
+        dataToDisplayCharts['averageHp'],
+        dataToDisplayCharts['averageAttack'],
+        dataToDisplayCharts['averageDefense'],
+        dataToDisplayCharts['averageAttackSpe'],
+        dataToDisplayCharts['averageDefenseSpe'],
+        dataToDisplayCharts['averageSpeed'],
+    ];
+    myChart.update();
+    console.log(myChart)
 }
 
 window.onload = function () {
@@ -128,9 +163,9 @@ function delTeam(index) {
     team.splice(index, 1);
     localStorage.setItem("team", JSON.stringify(team));
     console.log(team);
-    checkTeam()
-    generateModal()
-
+    checkTeam();
+    generateModal();
+    setstats();
 }
 
 function delAllTeam() {
@@ -141,6 +176,7 @@ function delAllTeam() {
 
     checkTeam()
     generateModal()
+    setstats();
 }
 
 function checkTeam() {
@@ -157,7 +193,7 @@ function checkTeam() {
 
 
 function search(input) {
-    console.log("text : " + input)
+    input = toTitleCase(input);
     const title = document.querySelector("#title")
 
     if (input !== "") {

@@ -9,7 +9,7 @@ url2 = "https://pokeapi.co/api/v2/pokemon-species/"
 
 async def get_pokemon(id_pokemon):
     async with aiohttp.ClientSession() as session:
-        async with session.get(f"{url}?offset={id_pokemon - 1}&limit={1}") as r:
+        async with session.get(f"{url}?offset={int(id_pokemon) - 1}&limit={1}") as r:
             data = await r.json()
             for poke in data['results']:
                 async with session.get(f"{poke['url']}") as req:
