@@ -13,9 +13,27 @@ def to_kg(value):
 @register.filter(name="to_size")
 @stringfilter
 def to_size(value):
-    value = float(value)/10
+    value = float(value) / 10
     print(value)
     if value >= 1:
         return str(value) + " m"
     else:
-        return str(value*100) + " cm"
+        return str(value * 100) + " cm"
+
+
+@register.filter(name="next")
+@stringfilter
+def next(value):
+    if value > 898:
+        return 1
+    else:
+        return str(value)
+
+
+@register.filter(name="back")
+@stringfilter
+def back(value):
+    if value < 1:
+        return 898
+    else:
+        return str(value)
