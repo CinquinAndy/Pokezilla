@@ -1,3 +1,4 @@
+{% load tag_library %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="fr">
@@ -32,7 +33,7 @@
                 <div class="grid grid-cols-2 grid-rows-3 gap-14">
                     <div>
                         <h2 class="font-bold text-md">Taille</h2>
-                        <h3>{{ pokemon.height }}0 cm</h3>
+                        <h3>{{ pokemon.height|to_size }}</h3>
                     </div>
                     <div>
                         <h2 class="font-bold text-md">Catégorie</h2>
@@ -44,7 +45,7 @@
                     </div>
                     <div>
                         <h2 class="font-bold text-md">Poid</h2>
-                        <h3>{{ pokemon.weight }}00 g</h3>
+                        <h3>{{ pokemon.weight|to_kg }} kg</h3>
                     </div>
                 </div>
                 <div class="grid grid-rows-2">
@@ -129,7 +130,7 @@
                         </div>
                     </div>
                     <div class="flex flex-col">
-                        <h2 class="font-bold text-md">Faiblesse</h2>
+                        <h2 class="font-bold text-md">Faible contre</h2>
                         <div class="flex type">
                              {% for weaks in weakness %}
                                 {% if weaks == 'fairy' %}
