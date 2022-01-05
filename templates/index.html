@@ -3,16 +3,15 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    {% load tailwind_tags %}
+    {% tailwind_css %}
     <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0">
     <meta content="index,follow" name="robots">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pokezilla !</title>
     <meta name="description" content="Pokezilla, le pokedex fait et pensé autrement !">
-{#    <link rel="canonical" href="https://pokezilla.com/">#}
     <link rel="icon" href="../static/pokedex/Ressources/images/pokeball.svg" sizes="32x32">
-    {% load tailwind_tags %}
-    {% tailwind_css %}
     <link rel="stylesheet" href="../static/pokedex/stylesheets.css">
     <script src="../static/pokedex/script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,10 +31,12 @@ border-2 border-gray-900 shadow-2xl transform -translate-x-1/2 z-30">
 
 {#     section relative a la modale        #}
 <section class="z-50">
-    <button onclick="showModal()" class="flex fixed top-0 right-0 m-40 justify-start items-center z-40">
+    <button id="btnShowModal" onclick="showModal()"
+            class="flex fixed top-0 right-0 m-40 justify-start items-center z-40">
         <img src="../static/pokedex/Ressources/images/pokeball.svg" alt="Team" class="w-16 h-16 hover:scale-105">
     </button>
-    <button id="popup" onclick="hidePopup()" class="flex fixed bottom-0 right-0 m-20 justify-start items-center z-40 transition-all opacity-0 z-0">
+    <button id="popup" onclick="hidePopup()"
+            class="flex fixed bottom-0 right-0 m-20 justify-start items-center z-40 transition-all opacity-0 z-0">
         <div class="bg-green-500 text-white font-bold flex justify-center items-center p-4 px-8 rounded-2xl">
             <p>Pokemon ajouté à l'équipe !</p>
         </div>
@@ -62,7 +63,7 @@ border-2 border-gray-900 shadow-2xl transform -translate-x-1/2 z-30">
                         <div id="team"></div>
                     </div>
                     <div class="flex justify-center items-center h-full pl-10 pt-10">
-                        <div>
+                        <div class="w-full">
                             <canvas id="myChart" width="600" height="300"></canvas>
                         </div>
                     </div>
@@ -108,77 +109,20 @@ border-2 border-gray-900 shadow-2xl transform -translate-x-1/2 z-30">
         </div>
     {% endfor %}
 </section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script>
-    const ctx = document.getElementById('myChart');
+    function checkStatsPokemon(pokemonTableId) {
 
-    var bar_ctx = ctx.getContext('2d');
-    var background_hp = bar_ctx.createLinearGradient(0, 0, 0, 1000);
-    background_hp.addColorStop(0, '#14532d');
-    background_hp.addColorStop(1, '#dcfce7');
-
-    var background_atk = bar_ctx.createLinearGradient(0, 0, 0, 1000);
-    background_atk.addColorStop(0, '#7f1d1d');
-    background_atk.addColorStop(1, '#fee2e2');
-
-    var background_def = bar_ctx.createLinearGradient(0, 0, 0, 1000);
-    background_def.addColorStop(0, '#713F12');
-    background_def.addColorStop(1, '#fef9c3');
-
-    var background_atkspe = bar_ctx.createLinearGradient(0, 0, 0, 1000);
-    background_atkspe.addColorStop(0, '#0c4a6e');
-    background_atkspe.addColorStop(1, '#e0f2fe');
-
-    var background_defspe = bar_ctx.createLinearGradient(0, 0, 0, 1000);
-    background_defspe.addColorStop(0, '#134e4a');
-    background_defspe.addColorStop(1, '#ccfbf1');
-
-    var background_speed = bar_ctx.createLinearGradient(0, 0, 0, 1000);
-    background_speed.addColorStop(0, '#78350f');
-    background_speed.addColorStop(1, '#fef3c7');
-
-    const myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['HP', 'ATK', 'DEF', 'ATK.SPE', 'DEF.SPE', 'SPEED'],
-            datasets: [{
-                label: 'STATS MOYENNE',
-                data:
-                    [
-{#                        {{ pokemon.stats.0.base_stat }},#}
-{#                        {{ pokemon.stats.1.base_stat }},#}
-{#                        {{ pokemon.stats.2.base_stat }},#}
-{#                        {{ pokemon.stats.3.base_stat }},#}
-{#                        {{ pokemon.stats.4.base_stat }},#}
-{#                        {{ pokemon.stats.5.base_stat }}#}
-                        20,
-                        30,
-                        40,
-                        50,
-                        60,
-                        70,
-                    ],
-                backgroundColor: [
-                    background_hp,
-                    background_atk,
-                    background_def,
-                    background_atkspe,
-                    background_defspe,
-                    background_speed
-                ],
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    _suggestedMin: -10,
-                    _suggestedMax: 100,
-                    min: 0,
-                    max: 150,
-                    beginAtZero: true
-                }
+        $.ajax({
+            type: "POST",
+            url: '{{'my-ajax-test/'}}',
+            data: {csrfmiddlewaretoken: '{{ csrf_token }}', text: pokemonTableId},
+            success: function callback(response) {
+                /* do whatever with the response */
+                updatechartpokemonstats(response);
             }
-        }
-    });
+        });
+    }
 </script>
 </body>
 </html>
