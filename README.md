@@ -24,3 +24,10 @@ interpreter )
 ## Démarrer le projet
 1. Lancer le projet ( maj + f9 par défaut ou le logo de start en haut de l'IDE)
 2. `python manage.py tailwind start`
+
+## Présentation du projet
+![img_1.png](img_1.png)
+![img_2.png](img_2.png)
+![img_5.png](img_5.png)
+![img_3.png](img_3.png)
+![img_4.png](img_4.png)
