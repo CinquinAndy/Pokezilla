@@ -1,124 +1,124 @@
 def get_weakness(type):
-    if type == "Normal":
+    if type == "normal":
         return [
-            "Rock",
-            "Steel",
-            "Ghost"
+            "rock",
+            "steel",
+            "ghost"
         ]
-    elif type == "Fighting":
+    elif type == "fighting":
         return [
-            "Flying",
-            "Poison",
-            "Bug",
-            "Psychic",
-            "Fairy",
-            "Ghosht"
+            "flying",
+            "poison",
+            "bug",
+            "psychic",
+            "fairy",
+            "ghosht"
         ]
-    elif type == "Flying":
+    elif type == "flying":
         return [
-            "Rock",
-            "Steel",
-            "Electric"
+            "rock",
+            "steel",
+            "electric"
         ]
-    elif type == "Poison":
+    elif type == "poison":
         return [
-            "Poison",
-            "Ground",
-            "Rock",
-            "Ghost",
-            "Steel"
+            "poison",
+            "ground",
+            "rock",
+            "ghost",
+            "steel"
         ]
-    elif type == "Ground":
+    elif type == "ground":
         return [
-            "Bug",
-            "Grass",
-            "Flying"
+            "bug",
+            "grass",
+            "flying"
         ]
-    elif type == "Rock":
+    elif type == "rock":
         return [
-            "Fighting",
-            "Ground",
-            "Steel"
+            "fighting",
+            "ground",
+            "steel"
         ]
-    elif type == "Bug":
+    elif type == "bug":
         return [
-            "Fighting",
-            "Flying",
-            "Poison",
-            "Ghost",
-            "Steel",
-            "Fire",
-            "Fairy"
+            "fighting",
+            "flying",
+            "poison",
+            "ghost",
+            "steel",
+            "fire",
+            "fairy"
         ]
-    elif type == "Ghost":
+    elif type == "ghost":
         return [
-            "Normal",
-            "Dark"
+            "normal",
+            "dark"
         ]
-    elif type == "Steel":
+    elif type == "steel":
         return [
-            "Steel",
-            "Fire",
-            "Water",
-            "Electric"
+            "steel",
+            "fire",
+            "water",
+            "electric"
         ]
-    elif type == "Fire":
+    elif type == "fire":
         return [
-            "Rock",
-            "Fire",
-            "Water",
-            "Dragon"
+            "rock",
+            "fire",
+            "water",
+            "dragon"
         ]
-    elif type == "Water":
+    elif type == "water":
         return [
-            "Water",
-            "Grass",
-            "Dragon"
+            "water",
+            "grass",
+            "dragon"
         ]
-    elif type == "Grass":
+    elif type == "grass":
         return [
-            "Flying",
-            "Poison",
-            "Bug",
-            "Steel",
-            "Fire",
-            "Grass",
-            "Dragon"
+            "flying",
+            "poison",
+            "bug",
+            "steel",
+            "fire",
+            "grass",
+            "dragon"
         ]
-    elif type == "Electric":
+    elif type == "electric":
         return [
-            "Grass",
-            "Electric",
-            "Dragon",
-            "Ground",
+            "grass",
+            "electric",
+            "dragon",
+            "ground",
         ]
-    elif type == "Psychic":
+    elif type == "psychic":
         return [
-            "Steel",
-            "Psychic",
-            "Dark"
+            "steel",
+            "psychic",
+            "dark"
         ]
-    elif type == "Ice":
+    elif type == "ice":
         return [
-            "Steel",
-            "Fire",
-            "Water",
-            "Ice"
+            "steel",
+            "fire",
+            "water",
+            "ice"
         ]
-    elif type == "Dragon":
+    elif type == "dragon":
         return [
-            "Steel",
-            "Fairy"
+            "steel",
+            "fairy"
         ]
-    elif type == "Dark":
+    elif type == "dark":
         return [
-            "Fighting",
-            "Dark",
-            "Fairy"
+            "fighting",
+            "dark",
+            "fairy"
         ]
-    elif type == "Fairy":
+    elif type == "fairy":
         return [
-            "Poison",
-            "Steel",
-            "Fire"
+            "poison",
+            "steel",
+            "fire"
         ]
