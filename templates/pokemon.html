@@ -126,9 +126,81 @@
                     <div class="flex flex-col">
                         <h2 class="font-bold text-md">Faiblesse</h2>
                         <div class="flex type">
-                            <img src="../static/pokedex/Ressources/images/types/electric.svg" alt="electric"
-                                 class="icon electric">
-                            <img src="../static/pokedex/Ressources/images/types/bug.svg" alt="bug" class="icon bug">
+                             {% for weaks in weakness %}
+                                {% if weaks == 'fairy' %}
+                                    <img src="../static/pokedex/Ressources/images/types/fairy.svg" alt="fairy"
+                                         class="icon fairy">
+                                {% endif %}
+                                {% if weaks == 'fire' %}
+                                    <img src="../static/pokedex/Ressources/images/types/fire.svg" alt="dark"
+                                         class="icon fire">
+                                {% endif %}
+                                {% if weaks == 'normal' %}
+                                    <img src="../static/pokedex/Ressources/images/types/normal.svg" alt="normal"
+                                         class="icon normal">
+                                {% endif %}
+                                {% if weaks == 'bug' %}
+                                    <img src="../static/pokedex/Ressources/images/types/bug.svg" alt="bug"
+                                         class="icon bug">
+                                {% endif %}
+                                {% if weaks == 'dark' %}
+                                    <img src="../static/pokedex/Ressources/images/types/dark.svg" alt="dark"
+                                         class="icon dark">
+                                {% endif %}
+                                {% if weaks == 'dragon' %}
+                                    <img src="../static/pokedex/Ressources/images/types/dragon.svg" alt="dragon"
+                                         class="icon dragon">
+                                {% endif %}
+                                {% if weaks == 'electric' %}
+                                    <img src="../static/pokedex/Ressources/images/types/electric.svg" alt="electric"
+                                         class="icon electric">
+                                {% endif %}
+                                {% if weaks == 'fighting' %}
+                                    <img src="../static/pokedex/Ressources/images/types/fighting.svg" alt="fighting"
+                                         class="icon fighting">
+                                {% endif %}
+
+                                {% if weaks == 'flying' %}
+                                    <img src="../static/pokedex/Ressources/images/types/flying.svg" alt="flying"
+                                         class="icon flying">
+                                {% endif %}
+                                {% if weaks == 'ghost' %}
+                                    <img src="../static/pokedex/Ressources/images/types/ghost.svg" alt="ghost"
+                                         class="icon ghost">
+                                {% endif %}
+                                {% if weaks == 'grass' %}
+                                    <img src="../static/pokedex/Ressources/images/types/grass.svg" alt="grass"
+                                         class="icon grass">
+                                {% endif %}
+                                {% if weaks == 'ground' %}
+                                    <img src="../static/pokedex/Ressources/images/types/ground.svg" alt="ground"
+                                         class="icon ground">
+                                {% endif %}
+                                {% if weaks == 'ice' %}
+                                    <img src="../static/pokedex/Ressources/images/types/ice.svg" alt="ice"
+                                         class="icon ice">
+                                {% endif %}
+                                {% if weaks == 'poison' %}
+                                    <img src="../static/pokedex/Ressources/images/types/poison.svg" alt="poison"
+                                         class="icon poison">
+                                {% endif %}
+                                {% if weaks == 'psychic' %}
+                                    <img src="../static/pokedex/Ressources/images/types/psychic.svg" alt="psychic"
+                                         class="icon psychic">
+                                {% endif %}
+                                {% if weaks == 'rock' %}
+                                    <img src="../static/pokedex/Ressources/images/types/rock.svg" alt="rock"
+                                         class="icon rock">
+                                {% endif %}
+                                {% if weaks == 'steel' %}
+                                    <img src="../static/pokedex/Ressources/images/types/steel.svg" alt="steel"
+                                         class="icon steel">
+                                {% endif %}
+                                {% if weaks == 'water' %}
+                                    <img src="../static/pokedex/Ressources/images/types/water.svg" alt="water"
+                                         class="icon water">
+                                {% endif %}
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
