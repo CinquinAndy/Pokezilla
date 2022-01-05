@@ -48,7 +48,4 @@ async def average(request):
         "averageSpeed": averageSpeed
     }
 
-    print(result)
-    print(HttpResponse(result))
-
     return HttpResponse(json.dumps(result))

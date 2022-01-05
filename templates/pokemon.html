@@ -3,11 +3,16 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Pokezilla</title>
     {% load tailwind_tags %}
     {% tailwind_css %}
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0">
+    <meta content="index,follow" name="robots">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pokezilla !</title>
+    <meta name="description" content="Pokezilla, le pokedex fait et pensé autrement !">
+    <link rel="icon" href="../static/pokedex/Ressources/images/pokeball.svg" sizes="32x32">
     <link rel="stylesheet" href="../static/pokedex/stylesheets.css">
-    <script src="../static/pokedex/script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -35,7 +40,7 @@
                     </div>
                     <div>
                         <h2 class="font-bold text-md">Chance de capture</h2>
-                        <h3>  {{ pokemon.capture_rate }} </h3>
+                        <h3>  {{ pokemon.capture_rate }}% </h3>
                     </div>
                     <div>
                         <h2 class="font-bold text-md">Poid</h2>

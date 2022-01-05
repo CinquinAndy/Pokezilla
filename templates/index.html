@@ -18,9 +18,35 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
-
 </head>
-<body class="text-gray-900 bg-gray-50">
+<body class="text-gray-900 bg-gray-50 relative">
+<div id="loader" class="fixed top-0 left-0 h-full w-full z-50 flex flex-col justify-center items-center bg-white">
+    <div>
+        <div class="lds-default">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div class="mt-4">
+        <p>Chargement en attente ...</p>
+    </div>
+    <div id="longLoading" class="mt-2 hidden">
+        <p>Le chargement peut être un peu long suivant votre connexion ...</p>
+    </div>
+    <div id="veryLongLoading" class="mt-2 hidden">
+        <p>ça arrive bientôt, ne désespérez pas ! ...</p>
+    </div>
+</div>
 <nav class="flex fixed top-36 left-1/2 z-50 justify-start items-center w-80 h-16 bg-gray-50 rounded-3xl
 border-2 border-gray-900 shadow-2xl transform -translate-x-1/2 z-30">
     <img src="../static/pokedex/Ressources/honorball.svg" alt="Honor" class="mx-4 w-8 h-8">
@@ -111,6 +137,16 @@ border-2 border-gray-900 shadow-2xl transform -translate-x-1/2 z-30">
 </section>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script>
+    setTimeout(() => {
+        let longLoading = document.getElementById("longLoading");
+        longLoading.classList.remove("hidden");
+    }, 5000);
+
+    setTimeout(() => {
+        let veryLongLoading = document.getElementById("veryLongLoading");
+        veryLongLoading.classList.remove("hidden");
+    }, 15000);
+
     function checkStatsPokemon(pokemonTableId) {
         $.ajax({
             type: "POST",
