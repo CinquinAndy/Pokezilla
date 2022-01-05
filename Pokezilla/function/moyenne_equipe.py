@@ -31,13 +31,18 @@ async def average(request):
                 averageDefenseSpe += stat['base_stat']
             if stat['stat']['name'] == "speed":
                 averageSpeed += stat['base_stat']
-
-    averageHp /= len(pokemons)
-    averageAttack /= len(pokemons)
-    averageDefense /= len(pokemons)
-    averageAttackSpe /= len(pokemons)
-    averageDefenseSpe /= len(pokemons)
-    averageSpeed /= len(pokemons)
+    if averageHp != 0:
+        averageHp /= len(pokemons)
+    if averageAttack != 0:
+        averageAttack /= len(pokemons)
+    if averageDefense != 0:
+        averageDefense /= len(pokemons)
+    if averageAttackSpe != 0:
+        averageAttackSpe /= len(pokemons)
+    if averageDefenseSpe != 0:
+        averageDefenseSpe /= len(pokemons)
+    if averageSpeed != 0:
+        averageSpeed /= len(pokemons)
 
     result = {
         "averageHp": averageHp,
