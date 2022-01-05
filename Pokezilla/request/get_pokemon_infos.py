@@ -8,6 +8,10 @@ url2 = "https://pokeapi.co/api/v2/pokemon-species/"
 
 
 async def get_pokemon(id_pokemon):
+    if id_pokemon < 1:
+        id_pokemon = 898
+    elif id_pokemon > 898:
+        id_pokemon = 1
     async with aiohttp.ClientSession() as session:
         async with session.get(f"{url}?offset={int(id_pokemon) - 1}&limit={1}") as r:
             data = await r.json()
